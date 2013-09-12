@@ -1,0 +1,55 @@
+// Fonts
+
+$line-height: 1.5;
+$small-base-size: 1.2;
+$mid-base-size: 1.4;
+$large-base-size: 1.6;
+
+
+// Grid
+
+$small-cols: 4;
+$mid-cols: 8;
+$large-cols: 8;
+
+$small-grid: 4 (3 1.5);
+$mid-grid: 8 (3 1.5);
+$large-grid: 8 (3 1.5); 
+
+$mid-break: 40em;
+$large-break: 70em;
+$extra-large-break: 80em;
+
+$grid-padding: 1em;
+$column-width: 3;
+$gutter-width: 1.5;
+$container-style: fluid;
+$border-box-sizing: true;
+
+// Fonts
+
+$sans-font: 'Lato', Helvetica, Arial, sans-serif;
+$body-font: $sans-font;
+$h-font: 'Exo', Helvetica, Arial, sans-serif;
+
+// Colors
+
+$blue: #50bcc3;
+$light-blue: #5ec7ce;
+$red: #bc514a;
+$dark-red: #b44d46;
+$white: tint($blue, 93%);
+$black: tint(shade($blue, 80%), 20%);
+
+$text-c: $black;
+$bgc: $white;
+
+$link-c: $light-blue;
+$link-hover-c: $red;
+
+$header-bgc: $light-blue;
+$header-c: $bgc;
+$header-hover-c: $red;
+
+$footer-bgc: $blue;
+$footer-c: $light-blue;

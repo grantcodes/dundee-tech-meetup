@@ -1,0 +1,29 @@
+%input {
+	display: inline-block;
+	@include transition(all .2s);
+}
+
+%button {
+	@extend %input;
+	padding: 1em 2em;
+	background-color: $red;
+	border-radius: .5em;
+	text-decoration: none;
+	color: $bgc;
+	box-shadow: 0 .2em 0 darken($red, 15%);
+	text-align: center;
+	
+	&:hover, &:focus {
+		background-color: tint($red, 20%);
+		color: darken($red, 10%);
+	}
+
+	&:active {
+		@include transform(translateY(.1em));
+		box-shadow: 0 .1em 0 darken($red, 15%);
+	}
+}
+
+.getticket {
+	@extend %button;
+}

@@ -1,0 +1,12 @@
+body {
+	font-family: $body-font;
+	font-weight: 400;
+	line-height: $line-height;
+	font-size: $small-base-size * 1em;
+	@include breakpoint($mid-break) {
+		font-size: $mid-base-size * 1em;
+	}
+	@include breakpoint($extra-large-break) {
+		font-size: $large-base-size * 1em;
+	}
+}

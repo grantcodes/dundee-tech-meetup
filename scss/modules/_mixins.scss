@@ -1,0 +1,11 @@
+@mixin span-columns-and-fill-gutter($cols, $context: false){
+	
+  @if ($context != false) {
+    width: space($cols, $context);
+  }
+  @else {
+    width: space($cols);
+  }
+  margin-right: 0;
+  padding-right: gutter();
+}

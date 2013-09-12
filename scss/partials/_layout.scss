@@ -1,0 +1,74 @@
+.main-header {
+    text-align: center;
+    padding: 2em 1em;
+    
+    h1, h2 {
+        margin: 0;
+    }
+}
+
+.main-content,
+.main-nav,
+.main-footer {
+    padding: 0 $grid-padding;
+}
+
+// Home page
+
+.nextevent {
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 - $grid-padding;
+}
+
+.nextevent--header,
+.nextevent--description {
+    overflow: hidden;
+    padding: 0 $grid-padding;
+    @include breakpoint($large-break ,$no-query: '.lt-ie9') {
+        width: 61.5%;
+        float: left;
+        margin-right: 0;
+    }
+}
+
+.nextevent--map {
+    height: 0;
+    padding-bottom: 50%;
+
+    @include breakpoint($large-break ,$no-query: '.lt-ie9') {
+        width: 38.5%;
+        float: right;
+        position: absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.getticket {
+    margin: 0 auto;
+    display: block !important;
+    max-width: 50%;
+    margin-top: 1em;
+}
+
+.main-content {
+    padding-bottom: 4em;
+    
+    @include breakpoint($mid-break ,$no-query: '.lt-ie9') {
+        position: relative;
+        margin-bottom: 3em; // Same as footer height    
+    } 
+}
+
+.main-footer {
+    @include breakpoint($mid-break ,$no-query: '.lt-ie9') {
+        position: fixed;
+        height: 3em;
+        bottom: 0;
+        width: 100%;
+        z-index: -10;
+    } 
+}

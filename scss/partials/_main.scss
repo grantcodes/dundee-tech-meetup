@@ -1,0 +1,31 @@
+*, *:after, *:before {
+	@include box-sizing(border-box);
+}
+
+body, 
+.main-content {
+	background-color: $bgc;
+	color: $text-c;
+}
+
+a {
+	color: $link-c;
+	@include transition(color .2s);
+	
+	&:active, &:focus, &:hover {
+		color: $link-hover-c;
+	}
+}
+
+.content-sidebar-wrap {
+	box-shadow: 0 -4px 0 rgba(255,255,255,0.3);
+	z-index: 5;
+	position: relative;
+}
+
+// Home Page
+
+.nextevent--header {
+	background-color: $blue;
+	color: $bgc;
+}
