@@ -51,13 +51,13 @@
 		$api_key = 'T5LWQA5GJXBYFDCDA6';
 		$event_id = 2966318893;
 		$transient = 'event-info';
-		$cache_time = 60 * 60 * 1;
+		$cache_time = 60 * 60 * 2;
+		$live_event = false;
 		// $url = 'https://www.eventbrite.com/json/event_get?app_key=' . $api_key . '&id=' . $event_id;
 		$url = 'https://www.eventbrite.com/json/organizer_list_events?app_key=' . $api_key . '&id=' . $event_id . '&only_display=id,title,description,start_date,url,venue,status';
-		if ( !$event = get_transient( $transient ) ) {
+		if ( !$live_event = get_transient( $transient ) ) {
 			if ( $results_json = file_get_contents( $url ) ) {
 				$data = json_decode($results_json);
-				$live_event = false;
 				foreach ($data->events as $event) {
 					if (strtolower($event->event->status) == 'live') {
 						$live_event = $event->event;
