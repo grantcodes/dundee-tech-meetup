@@ -13,6 +13,17 @@
     padding: 0 $grid-padding;
 }
 
+.contact-info {
+    a {
+        display: block;
+        padding: .3em 1em;
+       @include breakpoint($mid-break ,$no-query: '.lt-ie9') {
+           width: 50%;
+           float: left;
+       } 
+   }
+}
+
 // Home page
 
 .nextevent {
@@ -59,14 +70,14 @@
     
     @include breakpoint($mid-break ,$no-query: '.lt-ie9') {
         position: relative;
-        margin-bottom: 3em; // Same as footer height    
+        margin-bottom: 6em; // Same as footer height    
     } 
 }
 
 .main-footer {
     @include breakpoint($mid-break ,$no-query: '.lt-ie9') {
         position: fixed;
-        height: 3em;
+        height: 6em;
         bottom: 0;
         width: 100%;
         z-index: -10;

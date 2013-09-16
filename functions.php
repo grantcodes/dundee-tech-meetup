@@ -19,7 +19,7 @@
 	
 	if (!is_admin()) {
 		wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
-		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,900|Exo:100,200,400,700,900' );
+		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,900|Exo:100,200,400' );
 	}
 	
 	add_shortcode( 'event', 'eventbrite_event_info' );
@@ -131,7 +131,10 @@
 	function get_event_description () {
 		if ($event = get_event_info()) {
 			$description = $event->description;
+			// Remove eventbrite junk markup
 			$description = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $description);
+			$description = str_replace('<p>&nbsp;</p>', '', $description);
+			$description = str_replace('<p> </p>', '', $description);
 
 			return $description;
 		}

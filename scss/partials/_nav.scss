@@ -1,0 +1,23 @@
+.contact-info {
+	overflow: hidden;
+
+	a {
+		background-color: $red;
+		color: $bgc;
+		text-decoration: none;
+		text-align: center;
+		@include transition(all .3s);
+		
+		&:first-child {
+			border-bottom: 2px solid darken($red, 10%);
+			@include breakpoint($mid-break ,$no-query: '.lt-ie9') {
+				border-bottom: none;
+			} 
+		}
+		
+		&:hover, &:active, &:focus {
+			background-color: tint($red, 20%);
+			color: darken($red, 10%);
+		}
+	}
+}

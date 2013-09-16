@@ -1,7 +1,7 @@
 .main-header {
 	background-image: url(img/bg.jpg);
 	@include background-size(cover);
-	background-position: right top;
+	background-position: right bottom;
 	@include filter(grayscale(60%));
 	@include transition (all 1s);
 	font-family: $h-font;
@@ -13,20 +13,18 @@
 		@include filter(grayscale(0%));
 	}
 
-	h1, h2 {
-		font-weight: 100;
-	}
-
 	h1 {
 		@include breakpoint($mid-break) {
 			font-size: 3em;
+			font-weight: 100;
 		} 
 	}
 
 	h2 {
-		text-shadow: 0 0 1px rgba(255,255,255,.7), 0 0 .3em rgba(0,0,0,.7);
+		text-shadow: 0 0 1px rgba(255,255,255,.7), 0 0 .3em rgba(0,0,0,.9);
 		font-size: 1em;
 		@include breakpoint($mid-break) {
+			font-weight: 200;
 		}
 	}
 

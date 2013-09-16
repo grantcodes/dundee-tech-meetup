@@ -4,3 +4,64 @@
 	background-color: darken($bgc, 80%);
 	color: $bgc;
 }
+
+.terminal-pixel {
+    margin: 0 auto;
+    display: inline-block;
+    line-height: 0;
+    outline: 0;
+    // cursor: pointer;
+
+    &:before, &:after {
+        content: url(img/terminal-pixel/logo-eyes.svg);
+        display: block;
+        margin: 0;
+        padding: 0;
+        opacity: .9;
+        @include transition(all .5s);
+    }
+
+    &:after {
+        content: url(img/terminal-pixel/logo-mouth.svg);
+    }
+
+    &:hover, &:active, &:focus {
+        outline: none;
+
+        &:before {
+            @include transform(scale(1.2) rotateX(180deg));
+            // @include transform(rotate(360deg));
+        }
+
+        &:after {
+            @include transform(scaleY(4));
+            // @include transform(scaleY(4));
+        }
+    }
+}
+
+.ie .terminal-pixel {
+    @include transform(none);
+    background: url(img/terminal-pixel/logo.png) no-repeat;
+    height: 9px * 2;
+    width: 13px * 2;
+    opacity: .9;
+    &:before, &:after {
+        content: '';
+    }
+
+    &:after {
+        content: '';
+    }
+
+    &:hover, &:active {
+
+        &:before {
+            @include transform(none);
+        }
+
+        &:after {
+            @include transform(none);
+        }
+    }
+}
